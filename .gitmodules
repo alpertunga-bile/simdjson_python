@@ -1,0 +1,6 @@
+[submodule "third-party/pybind11"]
+	path = third-party/pybind11
+	url = https://github.com/pybind/pybind11.git
+[submodule "third-party/SIMDString"]
+	path = third-party/SIMDString
+	url = https://github.com/RobloxResearch/SIMDString
