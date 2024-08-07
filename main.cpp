@@ -1,3 +1,5 @@
+#include <cstddef>
+
 #include "third-party/SIMDString/SIMDString.h"
 
 #include "third-party/pybind11/include/pybind11/operators.h"
@@ -28,11 +30,31 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::self >= py::self);
   str_class.def(py::self <= py::self);
   str_class.def(py::self == py::self);
+  str_class.def(py::self == StrClass::const_pointer());
   str_class.def(py::self != py::self);
+  str_class.def(py::self != StrClass::const_pointer());
+
+  str_class.def("find",
+                py::overload_cast<const StrClass &, std::size_t>(
+                    &StrClass::find, py::const_),
+                "str"_a, "pos"_a);
+  str_class.def("find",
+                py::overload_cast<StrClass::const_pointer, std::size_t>(
+                    &StrClass::find, py::const_),
+                "s"_a, "pos"_a);
+  str_class.def(
+      "find",
+      py::overload_cast<StrClass::const_pointer, std::size_t, std::size_t>(
+          &StrClass::find, py::const_),
+      "s"_a, "pos"_a, "count"_a);
+  str_class.def("find",
+                py::overload_cast<StrClass::value_type, std::size_t>(
+                    &StrClass::find, py::const_),
+                "s"_a, "pos"_a);
 
   str_class.def("length", &StrClass::length);
   str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
-  str_class.def("equals", &StrClass::equals);
+  str_class.def("equals", &StrClass::equals, "str"_a);
 
   str_class.def("__repr__", &StrClass::c_str);
 
