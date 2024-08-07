@@ -21,8 +21,18 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::self + py::self);
   str_class.def(py::self += py::self);
 
+  // check operations
+
+  str_class.def(py::self > py::self);
+  str_class.def(py::self < py::self);
+  str_class.def(py::self >= py::self);
+  str_class.def(py::self <= py::self);
+  str_class.def(py::self == py::self);
+  str_class.def(py::self != py::self);
+
   str_class.def("length", &StrClass::length);
   str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
+  str_class.def("equals", &StrClass::equals);
 
   str_class.def("__repr__", &StrClass::c_str);
 
