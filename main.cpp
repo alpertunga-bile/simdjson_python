@@ -18,6 +18,9 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::init<const std::string &>());
   str_class.def(py::init<std::string &&>());
 
+  str_class.def(py::self + py::self);
+  str_class.def(py::self += py::self);
+
   str_class.def("length", &StrClass::length);
   str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
 
