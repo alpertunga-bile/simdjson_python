@@ -390,17 +390,51 @@ PYBIND11_MODULE(simdstring, m) {
   // -------------------------------------------------------------------------------------
   // -- compare functions
 
+  str_class.def(
+      "compare",
+      py::overload_cast<StrClass::size_type, StrClass::size_type,
+                        const StrClass &>(&StrClass::compare, py::const_),
+      "pos"_a, "count"_a, "str"_a);
+  str_class.def(
+      "compare",
+      py::overload_cast<StrClass::size_type, StrClass::size_type,
+                        const StrClass &, StrClass::size_type,
+                        StrClass::size_type>(&StrClass::compare, py::const_),
+      "pos"_a, "count1"_a, "str"_a, "pos2"_a, "count2"_a);
+  str_class.def("compare",
+                py::overload_cast<StrClass::const_pointer>(&StrClass::compare,
+                                                           py::const_),
+                "s"_a);
+  str_class.def("compare",
+                py::overload_cast<StrClass::size_type, StrClass::size_type,
+                                  StrClass::const_pointer>(&StrClass::compare,
+                                                           py::const_),
+                "pos"_a, "count"_a, "s"_a);
+  str_class.def("compare",
+                py::overload_cast<StrClass::size_type, StrClass::size_type,
+                                  StrClass::const_pointer, StrClass::size_type>(
+                    &StrClass::compare, py::const_),
+                "pos"_a, "count1"_a, "s"_a, "count2"_a);
+
   // -------------------------------------------------------------------------------------
   // check operations
+
+  str_class.def(py::self == py::self, "str"_a);
+  str_class.def(py::self == StrClass::const_pointer(), "s"_a);
+  str_class.def(StrClass::const_pointer() == py::self);
+  str_class.def(py::self != py::self, "str"_a);
+  str_class.def(py::self != StrClass::const_pointer(), "s"_a);
+  str_class.def(StrClass::const_pointer() != py::self);
 
   str_class.def(py::self > py::self, "str"_a);
   str_class.def(py::self < py::self, "str"_a);
   str_class.def(py::self >= py::self, "str"_a);
   str_class.def(py::self <= py::self, "str"_a);
-  str_class.def(py::self == py::self, "str"_a);
-  str_class.def(py::self == StrClass::const_pointer(), "s"_a);
-  str_class.def(py::self != py::self, "str"_a);
-  str_class.def(py::self != StrClass::const_pointer(), "s"_a);
+
+  str_class.def(StrClass::const_pointer() < py::self);
+  str_class.def(StrClass::const_pointer() <= py::self);
+  str_class.def(StrClass::const_pointer() > py::self);
+  str_class.def(StrClass::const_pointer() >= py::self);
 
   // -------------------------------------------------------------------------------------
   // -- variable functions
