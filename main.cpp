@@ -450,6 +450,43 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def_property("value", &StrClass::c_str, nullptr);
 
   // -------------------------------------------------------------------------------------
+  // -- conversion functions
+
+  m.def("stoi",
+        py::overload_cast<const StrClass &, StrClass::size_type *, int>(
+            &stoi<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr, "base"_a = 10);
+
+  m.def("stol",
+        py::overload_cast<const StrClass &, StrClass::size_type *, int>(
+            &stol<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr, "base"_a = 10);
+
+  m.def("stoll",
+        py::overload_cast<const StrClass &, StrClass::size_type *, int>(
+            &stoll<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr, "base"_a = 10);
+
+  m.def("stoul",
+        py::overload_cast<const StrClass &, StrClass::size_type *, int>(
+            &stoul<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr, "base"_a = 10);
+
+  m.def("stoull",
+        py::overload_cast<const StrClass &, StrClass::size_type *, int>(
+            &stoull<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr, "base"_a = 10);
+
+  m.def("stof", py::overload_cast<const StrClass &, StrClass::size_type *>(
+                    &stof<SIMDSTRING_ALIGNMENT>, "str"_a, "pos"_a = nullptr));
+
+  m.def("stod", py::overload_cast<const StrClass &, StrClass::size_type *>(
+                    &stod<SIMDSTRING_ALIGNMENT>, "str"_a, "pos"_a = nullptr));
+
+  m.def("stold", py::overload_cast<const StrClass &, StrClass::size_type *>(
+                     &stold<SIMDSTRING_ALIGNMENT>, "str"_a, "pos"_a = nullptr));
+
+  // -------------------------------------------------------------------------------------
   // -- to_string functions
 
   m.def("to_string", py::overload_cast<int>(&to_string<SIMDSTRING_ALIGNMENT>),
