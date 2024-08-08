@@ -133,11 +133,6 @@ PYBIND11_MODULE(simdstring, m) {
 
   str_class.def("resize", &StrClass::resize, "count"_a, "c"_a = '\0');
 
-  str_class.def("replace",
-                static_cast<StrClass &(
-                    StrClass::*)(StrClass::size_type, StrClass::size_type,
-                                 const StrClass &)>(&StrClass::replace));
-
   // -------------------------------------------------------------------------------------
   // -- functions
 
@@ -180,13 +175,87 @@ PYBIND11_MODULE(simdstring, m) {
                     &StrClass::replace),
                 "pos"_a, "count"_a, "count2"_a, "c"_a);
 
+  // -------------------------------------------------------------------------------------
+  // -- functions
+
   str_class.def("clear", &StrClass::clear);
+
+  str_class.def("erase",
+                static_cast<StrClass &(StrClass::*)(StrClass::size_type,
+                                                    StrClass::size_type)>(
+                    &StrClass::erase),
+                "pos"_a = 0, "count"_a = StrClass::npos);
 
   // -------------------------------------------------------------------------------------
   // -- addition operations
 
   str_class.def(py::self + py::self);
+  str_class.def(py::self + StrClass::const_pointer());
+  str_class.def(StrClass::const_pointer() + py::self);
+  str_class.def(py::self + StrClass::value_type());
+  str_class.def(StrClass::value_type() + py::self);
   str_class.def(py::self += py::self);
+  str_class.def(py::self += StrClass::value_type());
+  str_class.def(py::self += StrClass::const_pointer());
+  str_class.def(py::self += std::initializer_list<StrClass::value_type>());
+
+  str_class.def("push_back", &StrClass::push_back, "c"_a);
+  str_class.def("pop_back", &StrClass::pop_back);
+
+  // -------------------------------------------------------------------------------------
+  // append functions
+
+  str_class.def(
+      "append",
+      static_cast<StrClass &(StrClass::*)(const StrClass &, StrClass::size_type,
+                                          StrClass::size_type)>(
+          &StrClass::append),
+      "str"_a, "pos"_a, "count"_a = StrClass::npos);
+  str_class.def(
+      "append",
+      static_cast<StrClass &(StrClass::*)(const StrClass &)>(&StrClass::append),
+      "str"_a);
+  str_class.def("append",
+                static_cast<StrClass &(StrClass::*)(StrClass::size_type,
+                                                    StrClass::value_type)>(
+                    &StrClass::append),
+                "count"_a, "c"_a);
+  str_class.def("append",
+                static_cast<StrClass &(StrClass::*)(StrClass::const_pointer,
+                                                    StrClass::size_type)>(
+                    &StrClass::append),
+                "s"_a, "t"_a);
+  str_class.def("append",
+                static_cast<StrClass &(StrClass::*)(StrClass::const_pointer)>(
+                    &StrClass::append),
+                "s"_a);
+  str_class.def("append",
+                static_cast<StrClass &(
+                    StrClass::*)(std::initializer_list<StrClass::value_type>)>(
+                    &StrClass::append),
+                "ilist"_a);
+
+  // -------------------------------------------------------------------------------------
+  // -- functions
+
+  str_class.def("swap", &StrClass::swap, "str"_a);
+
+  str_class.def("starts_with",
+                py::overload_cast<StrClass::value_type>(&StrClass::starts_with,
+                                                        py::const_),
+                "c"_a);
+  str_class.def("starts_with",
+                py::overload_cast<const StrClass::pointer>(
+                    &StrClass::starts_with, py::const_),
+                "s"_a);
+  str_class.def(
+      "ends_with",
+      py::overload_cast<StrClass::value_type>(&StrClass::ends_with, py::const_),
+      "c"_a);
+  str_class.def("ends_with",
+                py::overload_cast<StrClass::const_pointer>(&StrClass::ends_with,
+                                                           py::const_),
+                "s"_a);
 
   // -------------------------------------------------------------------------------------
   // check operations
