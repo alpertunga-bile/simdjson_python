@@ -9,19 +9,19 @@ if exists(BUILT_PACKAGE_PATH) is False:
     exit(1)
 
 sys.path.append(join(BUILT_PACKAGE_PATH, "Release"))
-sys.path.append(join(BUILT_PACKAGE_PATH))
-
-import simdstring
+sys.path.append(BUILT_PACKAGE_PATH)
 
 from test_manager import TestManager
-
 from test_ctor import CtorTests
+from test_assign import AssignTests
 
 if __name__ == "__main__":
     manager = TestManager()
 
     ctor_test = CtorTests()
+    assign_test = AssignTests()
 
     manager.checkout_test(ctor_test)
+    manager.checkout_test(assign_test)
 
     manager.finish()

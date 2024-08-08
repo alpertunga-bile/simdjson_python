@@ -4,8 +4,6 @@
 
 #include "third-party/pybind11/include/pybind11/pybind11.h"
 
-#include "third-party/pybind11/include/pybind11/complex.h"
-#include "third-party/pybind11/include/pybind11/functional.h"
 #include "third-party/pybind11/include/pybind11/operators.h"
 #include "third-party/pybind11/include/pybind11/stl.h"
 
