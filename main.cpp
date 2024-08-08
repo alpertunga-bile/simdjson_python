@@ -257,17 +257,20 @@ PYBIND11_MODULE(simdstring, m) {
                                                            py::const_),
                 "s"_a);
 
-  // -------------------------------------------------------------------------------------
-  // check operations
+  str_class.def("substr",
+                py::overload_cast<StrClass::size_type, StrClass::size_type>(
+                    &StrClass::substr, py::const_),
+                "pos"_a, "count"_a = StrClass::npos);
 
-  str_class.def(py::self > py::self, "str"_a);
-  str_class.def(py::self < py::self, "str"_a);
-  str_class.def(py::self >= py::self, "str"_a);
-  str_class.def(py::self <= py::self, "str"_a);
-  str_class.def(py::self == py::self, "str"_a);
-  str_class.def(py::self == StrClass::const_pointer(), "s"_a);
-  str_class.def(py::self != py::self, "str"_a);
-  str_class.def(py::self != StrClass::const_pointer(), "s"_a);
+  str_class.def(
+      "contains",
+      py::overload_cast<StrClass::value_type>(&StrClass::contains, py::const_),
+      "c"_a);
+
+  str_class.def("contains",
+                py::overload_cast<StrClass::const_pointer>(&StrClass::contains,
+                                                           py::const_),
+                "s"_a);
 
   // -------------------------------------------------------------------------------------
   // -- find functions
@@ -289,6 +292,115 @@ PYBIND11_MODULE(simdstring, m) {
                 py::overload_cast<StrClass::value_type, std::size_t>(
                     &StrClass::find, py::const_),
                 "s"_a, "pos"_a);
+
+  str_class.def("rfind",
+                py::overload_cast<const StrClass &, StrClass::size_type>(
+                    &StrClass::rfind, py::const_),
+                "str"_a, "pos"_a = StrClass::npos);
+  str_class.def("rfind",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type>(
+                    &StrClass::rfind, py::const_),
+                "s"_a, "pos"_a = StrClass::npos);
+  str_class.def(
+      "rfind",
+      py::overload_cast<StrClass::const_pointer, StrClass::size_type,
+                        StrClass::size_type>(&StrClass::rfind, py::const_),
+      "s"_a, "pos"_a, "count"_a);
+  str_class.def("rfind",
+                py::overload_cast<StrClass::value_type, StrClass::size_type>(
+                    &StrClass::rfind, py::const_),
+                "c"_a, "pos"_a = StrClass::npos);
+
+  // -------------------------------------------------------------------------------------
+  // -- find_first_of functions
+
+  str_class.def("find_first_of",
+                py::overload_cast<const StrClass &, StrClass::size_type>(
+                    &StrClass::find_first_of, py::const_),
+                "str"_a, "pos"_a = 0);
+  str_class.def("find_first_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type>(
+                    &StrClass::find_first_of, py::const_),
+                "s"_a, "pos"_a = 0);
+  str_class.def("find_first_of",
+                py::overload_cast<StrClass::value_type, StrClass::size_type>(
+                    &StrClass::find_first_of, py::const_),
+                "c"_a, "pos"_a = 0);
+  str_class.def("find_first_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type,
+                                  StrClass::size_type>(&StrClass::find_first_of,
+                                                       py::const_),
+                "s"_a, "pos"_a, "count"_a);
+
+  // -------------------------------------------------------------------------------------
+  // -- find_first_not_of functions
+
+  str_class.def("find_first_not_of",
+                py::overload_cast<const StrClass &, StrClass::size_type>(
+                    &StrClass::find_first_not_of, py::const_),
+                "str"_a, "pos"_a = 0);
+  str_class.def("find_first_not_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type>(
+                    &StrClass::find_first_not_of, py::const_),
+                "s"_a, "pos"_a = 0);
+  str_class.def("find_first_not_of",
+                py::overload_cast<StrClass::value_type, StrClass::size_type>(
+                    &StrClass::find_first_not_of, py::const_),
+                "c"_a, "pos"_a = 0);
+  str_class.def("find_first_not_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type,
+                                  StrClass::size_type>(
+                    &StrClass::find_first_not_of, py::const_),
+                "s"_a, "pos"_a, "count"_a);
+
+  // -------------------------------------------------------------------------------------
+  // -- find_last_of functions
+
+  str_class.def("find_last_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type,
+                                  StrClass::size_type>(&StrClass::find_last_of,
+                                                       py::const_),
+                "s"_a, "pos"_a, "count"_a);
+  str_class.def("find_last_of",
+                py::overload_cast<const StrClass &, StrClass::size_type>(
+                    &StrClass::find_last_of, py::const_),
+                "str"_a, "pos"_a = StrClass::npos);
+  str_class.def("find_last_of",
+                py::overload_cast<StrClass::value_type, StrClass::size_type>(
+                    &StrClass::find_last_of, py::const_),
+                "c"_a, "pos"_a = StrClass::npos);
+
+  // -------------------------------------------------------------------------------------
+  // -- find_last_not_of functions
+
+  str_class.def("find_last_not_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type,
+                                  StrClass::size_type>(
+                    &StrClass::find_last_not_of, py::const_),
+                "s"_a, "pos"_a, "count"_a);
+  str_class.def("find_last_not_of",
+                py::overload_cast<const StrClass &, StrClass::size_type>(
+                    &StrClass::find_last_not_of, py::const_),
+                "str"_a, "pos"_a = StrClass::npos);
+  str_class.def("find_last_not_of",
+                py::overload_cast<StrClass::value_type, StrClass::size_type>(
+                    &StrClass::find_last_not_of, py::const_),
+                "c"_a, "pos"_a = StrClass::npos);
+
+  // -------------------------------------------------------------------------------------
+  // -- compare functions
+
+  // -------------------------------------------------------------------------------------
+  // check operations
+
+  str_class.def(py::self > py::self, "str"_a);
+  str_class.def(py::self < py::self, "str"_a);
+  str_class.def(py::self >= py::self, "str"_a);
+  str_class.def(py::self <= py::self, "str"_a);
+  str_class.def(py::self == py::self, "str"_a);
+  str_class.def(py::self == StrClass::const_pointer(), "s"_a);
+  str_class.def(py::self != py::self, "str"_a);
+  str_class.def(py::self != StrClass::const_pointer(), "s"_a);
 
   // -------------------------------------------------------------------------------------
   // -- variable functions
