@@ -477,14 +477,20 @@ PYBIND11_MODULE(simdstring, m) {
             &stoull<SIMDSTRING_ALIGNMENT>),
         "str"_a, "pos"_a = nullptr, "base"_a = 10);
 
-  m.def("stof", py::overload_cast<const StrClass &, StrClass::size_type *>(
-                    &stof<SIMDSTRING_ALIGNMENT>, "str"_a, "pos"_a = nullptr));
+  m.def("stof",
+        py::overload_cast<const StrClass &, StrClass::size_type *>(
+            &stof<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr);
 
-  m.def("stod", py::overload_cast<const StrClass &, StrClass::size_type *>(
-                    &stod<SIMDSTRING_ALIGNMENT>, "str"_a, "pos"_a = nullptr));
+  m.def("stod",
+        py::overload_cast<const StrClass &, StrClass::size_type *>(
+            &stod<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr);
 
-  m.def("stold", py::overload_cast<const StrClass &, StrClass::size_type *>(
-                     &stold<SIMDSTRING_ALIGNMENT>, "str"_a, "pos"_a = nullptr));
+  m.def("stold",
+        py::overload_cast<const StrClass &, StrClass::size_type *>(
+            &stold<SIMDSTRING_ALIGNMENT>),
+        "str"_a, "pos"_a = nullptr);
 
   // -------------------------------------------------------------------------------------
   // -- to_string functions
