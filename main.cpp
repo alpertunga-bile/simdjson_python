@@ -24,21 +24,48 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::init<>());
   str_class.def(py::init<std::size_t, StrClass::value_type>(), "count"_a,
                 "c"_a);
-  str_class.def(py::init<const StrClass::value_type>(), "c"_a);
-  str_class.def(py::init<const StrClass &, std::size_t>(), "str"_a, "pos"_a);
+  str_class.def(py::init<const StrClass &, std::size_t>(), "str"_a,
+                "pos"_a = 0);
   str_class.def(py::init<const StrClass &, std::size_t, std::size_t>(), "str"_a,
-                "pos"_a, "count"_a);
+                "pos"_a = 0, "count"_a = StrClass::npos);
   str_class.def(py::init<StrClass::const_pointer>(), "s"_a);
   str_class.def(py::init<StrClass::const_pointer, std::size_t>(), "s"_a,
-                "count"_a);
+                "count"_a = StrClass::npos);
   str_class.def(py::init<StrClass::const_pointer, std::size_t, std::size_t>(),
-                "s"_a, "pos"_a, "count"_a);
+                "s"_a, "pos"_a = 0, "count"_a = StrClass::npos);
   str_class.def(py::init<const std::string &, std::size_t, std::size_t>(),
-                "str"_a, "pos"_a, "count"_a);
+                "str"_a, "pos"_a = 0, "count"_a = StrClass::npos);
   str_class.def(py::init<std::initializer_list<StrClass::value_type>>(),
                 "ilist"_a);
   str_class.def(py::init<const std::string &>());
   str_class.def(py::init<std::string &&>());
+
+  str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
+
+  str_class.def("__getitem__", [](StrClass &self, StrClass::size_type index) {
+    return self[index];
+  });
+
+  str_class.def(
+      "at", py::overload_cast<StrClass::size_type>(&StrClass::at, py::const_));
+  str_class.def("at", py::overload_cast<StrClass::size_type>(&StrClass::at));
+
+  str_class.def("front", py::overload_cast<>(&StrClass::front, py::const_));
+  str_class.def("front", py::overload_cast<>(&StrClass::front));
+
+  str_class.def("back", py::overload_cast<>(&StrClass::back, py::const_));
+  str_class.def("back", py::overload_cast<>(&StrClass::back));
+
+  str_class.def("size", &StrClass::size);
+  str_class.def_property("length", &StrClass::length, nullptr);
+
+  str_class.def("is_empty", &StrClass::empty);
+  str_class.def_property("empty", &StrClass::empty, nullptr);
+
+  str_class.def("reserve", &StrClass::reserve, "new_length"_a = 0);
+  str_class.def("shrink_to_fit", &StrClass::shrink_to_fit);
+
+  str_class.def("resize", &StrClass::resize, "count"_a, "c"_a = '\0');
 
   // addition operations
 
@@ -78,11 +105,13 @@ PYBIND11_MODULE(simdstring, m) {
 
   // variable functions
 
-  str_class.def("length", &StrClass::length);
-  str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
   str_class.def("equals", &StrClass::equals, "str"_a);
 
+  str_class.def("__len__", &StrClass::length);
+  str_class.def("__str__", &StrClass::c_str);
   str_class.def("__repr__", &StrClass::c_str);
+
+  str_class.def(py::hash(py::self));
 
   str_class.def_property("value", &StrClass::c_str, nullptr);
 
