@@ -83,6 +83,10 @@ PYBIND11_MODULE(simdstring, m) {
 
   str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
 
+  str_class.def("__setitem__",
+                [](StrClass &self, StrClass::size_type index,
+                   StrClass::value_type value) { self[index] = value; });
+
   str_class.def("__getitem__", [](StrClass &self, StrClass::size_type index) {
     return self[index];
   });
