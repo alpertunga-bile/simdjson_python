@@ -2,8 +2,12 @@
 
 #include "third-party/SIMDString/SIMDString.h"
 
-#include "third-party/pybind11/include/pybind11/operators.h"
 #include "third-party/pybind11/include/pybind11/pybind11.h"
+
+#include "third-party/pybind11/include/pybind11/complex.h"
+#include "third-party/pybind11/include/pybind11/functional.h"
+#include "third-party/pybind11/include/pybind11/operators.h"
+#include "third-party/pybind11/include/pybind11/stl.h"
 
 constexpr int SIMDSTRING_ALIGNMENT = 64;
 
@@ -27,7 +31,7 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::init<>());
   str_class.def(py::init<std::size_t, StrClass::value_type>(), "count"_a,
                 "c"_a);
-  str_class.def(py::init<const StrClass &, std::size_t>(), "str"_a,
+  str_class.def(py::init<const StrClass &, StrClass::value_type>(), "str"_a,
                 "pos"_a = 0);
   str_class.def(py::init<const StrClass &, std::size_t, std::size_t>(), "str"_a,
                 "pos"_a = 0, "count"_a = StrClass::npos);
@@ -40,8 +44,11 @@ PYBIND11_MODULE(simdstring, m) {
                 "str"_a, "pos"_a = 0, "count"_a = StrClass::npos);
   str_class.def(py::init<std::initializer_list<StrClass::value_type>>(),
                 "ilist"_a);
-  str_class.def(py::init<const std::string &>());
-  str_class.def(py::init<std::string &&>());
+  str_class.def(py::init<const std::string_view &, StrClass::size_type>(),
+                "str"_a, "pos"_a = 0);
+  str_class.def(py::init<const std::string_view &, StrClass::size_type,
+                         StrClass::size_type>(),
+                "str"_a, "pos"_a, "count"_a);
 
   // -------------------------------------------------------------------------------------
   // -- assign functions

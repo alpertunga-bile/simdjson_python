@@ -3,6 +3,7 @@
     "files.associations": {
         "cstdint": "cpp",
         "cstddef": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "xutility": "cpp"
     }
 }
