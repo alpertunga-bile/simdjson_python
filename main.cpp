@@ -40,6 +40,33 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::init<const std::string &>());
   str_class.def(py::init<std::string &&>());
 
+  str_class.def(
+      "assign",
+      static_cast<StrClass &(StrClass::*)(const StrClass &, StrClass::size_type,
+                                          StrClass::size_type)>(
+          &StrClass::assign),
+      "str"_a, "pos"_a = 0, "count"_a = StrClass::npos);
+  str_class.def("assign",
+                static_cast<StrClass &(StrClass::*)(StrClass::const_pointer,
+                                                    StrClass::size_type)>(
+                    &StrClass::assign),
+                "s"_a, "count"_a);
+  str_class.def("assign",
+                static_cast<StrClass &(StrClass::*)(StrClass::const_pointer)>(
+                    &StrClass::assign),
+                "s"_a);
+  str_class.def(
+      "assign",
+      static_cast<StrClass &(StrClass::*)(StrClass::size_type,
+                                          const StrClass::value_type)>(
+          &StrClass::assign),
+      "count"_a, "c"_a);
+  str_class.def("assign",
+                static_cast<StrClass &(
+                    StrClass::*)(std::initializer_list<StrClass::value_type>)>(
+                    &StrClass::assign),
+                "ilist"_a);
+
   str_class.def("data", py::overload_cast<>(&StrClass::data, py::const_));
 
   str_class.def("__getitem__", [](StrClass &self, StrClass::size_type index) {
@@ -66,6 +93,11 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def("shrink_to_fit", &StrClass::shrink_to_fit);
 
   str_class.def("resize", &StrClass::resize, "count"_a, "c"_a = '\0');
+
+  str_class.def("replace",
+                static_cast<StrClass &(
+                    StrClass::*)(StrClass::size_type, StrClass::size_type,
+                                 const StrClass &)>(&StrClass::replace));
 
   // addition operations
 
