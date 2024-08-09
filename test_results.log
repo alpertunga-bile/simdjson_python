@@ -57,4 +57,17 @@ string not 5                                       Passed
 string not 6                                       Passed    
 empty                                              Passed    
 ----------------------------------------------------------------------------------------------------
-Passed Ratio                                       %98.04
+------------------------------------------- Append Tests -------------------------------------------
+add op string                                      Passed    
+add op char                                        Passed    
+append w pos                                       Passed    
+append w pos and count                             Passed    
+string                                             Passed    
+string 2                                           Passed    
+string w count                                     Passed    
+concat                                             Passed    
+concat 2                                           Passed    
+concat char                                        Passed    
+concat 3                                           Passed    
+----------------------------------------------------------------------------------------------------
+Passed Ratio                                       %98.39

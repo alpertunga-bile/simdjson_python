@@ -201,10 +201,7 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(py::self + py::self);
   str_class.def(py::self + StrClass::const_pointer());
   str_class.def(StrClass::const_pointer() + py::self);
-  str_class.def(py::self + StrClass::value_type());
-  str_class.def(StrClass::value_type() + py::self);
   str_class.def(py::self += py::self);
-  str_class.def(py::self += StrClass::value_type());
   str_class.def(py::self += StrClass::const_pointer());
   str_class.def(py::self += std::initializer_list<StrClass::value_type>());
 

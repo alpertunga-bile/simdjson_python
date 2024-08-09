@@ -16,6 +16,7 @@ from test_ctor import CtorTests
 from test_assign import AssignTests
 from test_access import AccessTests
 from test_equality import EqualityTests
+from test_append import AppendTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -24,10 +25,12 @@ if __name__ == "__main__":
     assign_test = AssignTests()
     access_test = AccessTests()
     equality_test = EqualityTests()
+    append_test = AppendTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
     manager.checkout_test(access_test)
     manager.checkout_test(equality_test)
+    manager.checkout_test(append_test)
 
     manager.finish()
