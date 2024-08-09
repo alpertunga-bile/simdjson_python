@@ -4,3 +4,7 @@ sample_string_large = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 find_test_string = "abcabcabcabcabcabcabcdabcabcABCabc"
 find_test_string2 = "abcabcabcabcabcabcabcdabcabcabcabcadsf"
 find_test_string3 = "abcabcabcabcabcabcabcabcabcABCabc"
+
+
+def check_result(res: int) -> int:
+    return res if res != 18446744073709551615 else -1

@@ -1,6 +1,6 @@
 from test_base import TestBase
 
-from utility import find_test_string, find_test_string2, find_test_string3
+from utility import find_test_string, find_test_string2, find_test_string3, check_result
 
 from simdstring import SIMDString
 
@@ -15,9 +15,6 @@ class FindTests(TestBase):
         simdstring1 = SIMDString(find_test_string)
         substr = "abc"
         subsimdstr = "abc"
-
-        def check_result(res: int) -> int:
-            return res if res != 18446744073709551615 else -1
 
         self.add("substr", string1.find("abc") == simdstring1.find("abc"))
         self.add("substr 2", string1.find("abcd") == simdstring1.find("abcd"))

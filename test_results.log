@@ -192,6 +192,17 @@ empty                                              Passed
 empty 2                                            Passed    
 edge case null char                                Failed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        172
-Passed Tests                                       170
-Passed Ratio                                       %98.84
+------------------------------------------- RFind Tests --------------------------------------------
+substr                                             Passed    
+substr 2                                           Passed    
+substr 3                                           Passed    
+substr w pos                                       Failed    
+substr w pos 2                                     Failed    
+substr w pos 3                                     Failed    
+substr w pos 4                                     Failed    
+substr w pos 5                                     Failed    
+substr w pos 6                                     Failed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        181
+Passed Tests                                       173
+Passed Ratio                                       %95.58
