@@ -165,6 +165,33 @@ change with index op                               Passed
 swap                                               Passed    
 swap 2                                             Passed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        147
-Passed Tests                                       146
-Passed Ratio                                       %99.32
+-------------------------------------------- Find Tests --------------------------------------------
+substr                                             Passed    
+substr 2                                           Passed    
+substr string                                      Passed    
+substr pos                                         Passed    
+substr pos 2                                       Passed    
+substr pos 3                                       Passed    
+substr pos 4                                       Passed    
+substr pos 5                                       Passed    
+char                                               Passed    
+char 2                                             Passed    
+char 3                                             Passed    
+char 4                                             Passed    
+whole string                                       Passed    
+whole string 2                                     Passed    
+whole string 3                                     Passed    
+edge case                                          Passed    
+edge case 2                                        Passed    
+edge case 3                                        Passed    
+edge case 4                                        Passed    
+empty string                                       Passed    
+empty string 2                                     Passed    
+empty string 3                                     Passed    
+empty                                              Passed    
+empty 2                                            Passed    
+edge case null char                                Failed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        172
+Passed Tests                                       170
+Passed Ratio                                       %98.84

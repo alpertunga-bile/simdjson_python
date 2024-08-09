@@ -203,6 +203,7 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def(StrClass::const_pointer() + py::self);
   str_class.def(py::self += py::self);
   str_class.def(py::self += StrClass::const_pointer());
+  str_class.def(py::self += StrClass::value_type());
   str_class.def(py::self += std::initializer_list<StrClass::value_type>());
 
   str_class.def("push_back", &StrClass::push_back, "c"_a);
@@ -284,11 +285,11 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def("find",
                 py::overload_cast<const StrClass &, std::size_t>(
                     &StrClass::find, py::const_),
-                "str"_a, "pos"_a);
+                "str"_a, "pos"_a = 0);
   str_class.def("find",
                 py::overload_cast<StrClass::const_pointer, std::size_t>(
                     &StrClass::find, py::const_),
-                "s"_a, "pos"_a);
+                "s"_a, "pos"_a = 0);
   str_class.def(
       "find",
       py::overload_cast<StrClass::const_pointer, std::size_t, std::size_t>(
@@ -297,7 +298,7 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def("find",
                 py::overload_cast<StrClass::value_type, std::size_t>(
                     &StrClass::find, py::const_),
-                "s"_a, "pos"_a);
+                "s"_a, "pos"_a = 0);
 
   str_class.def("rfind",
                 py::overload_cast<const StrClass &, StrClass::size_type>(

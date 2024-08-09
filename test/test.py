@@ -22,6 +22,7 @@ from test_insert import InsertTests
 from test_replace import ReplaceTests
 from test_clear_erase import ClearEraseTests
 from test_swap import SwapTests
+from test_find import FindTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -36,6 +37,7 @@ if __name__ == "__main__":
     replace_test = ReplaceTests()
     clear_erase_test = ClearEraseTests()
     swap_test = SwapTests()
+    find_test = FindTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -47,5 +49,6 @@ if __name__ == "__main__":
     manager.checkout_test(replace_test)
     manager.checkout_test(clear_erase_test)
     manager.checkout_test(swap_test)
+    manager.checkout_test(find_test)
 
     manager.finish()
