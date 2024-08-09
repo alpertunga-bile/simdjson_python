@@ -18,6 +18,7 @@ from test_access import AccessTests
 from test_equality import EqualityTests
 from test_append import AppendTests
 from test_push_pop import PushPopTests
+from test_insert import InsertTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -28,6 +29,7 @@ if __name__ == "__main__":
     equality_test = EqualityTests()
     append_test = AppendTests()
     push_pop_test = PushPopTests()
+    insert_test = InsertTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -35,5 +37,6 @@ if __name__ == "__main__":
     manager.checkout_test(equality_test)
     manager.checkout_test(append_test)
     manager.checkout_test(push_pop_test)
+    manager.checkout_test(insert_test)
 
     manager.finish()

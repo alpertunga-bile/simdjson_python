@@ -75,4 +75,21 @@ push_back                                          Passed
 pop_back                                           Passed    
 empty push_back                                    Passed    
 ----------------------------------------------------------------------------------------------------
-Passed Ratio                                       %98.46
+------------------------------------------- Insert Tests -------------------------------------------
+beginning                                          Passed    
+beginning 1                                        Passed    
+beginning 2                                        Passed    
+beginning 3                                        Passed    
+beginning 4                                        Passed    
+middle                                             Passed    
+middle 1                                           Passed    
+middle 2                                           Passed    
+middle 3                                           Passed    
+middle 4                                           Passed    
+near the end                                       Passed    
+near the end 1                                     Passed    
+near the end 2                                     Passed    
+near the end 3                                     Passed    
+near the end 4                                     Passed    
+----------------------------------------------------------------------------------------------------
+Passed Ratio                                       %98.75
