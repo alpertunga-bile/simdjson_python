@@ -19,6 +19,7 @@ from test_equality import EqualityTests
 from test_append import AppendTests
 from test_push_pop import PushPopTests
 from test_insert import InsertTests
+from test_replace import ReplaceTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -30,6 +31,7 @@ if __name__ == "__main__":
     append_test = AppendTests()
     push_pop_test = PushPopTests()
     insert_test = InsertTests()
+    replace_test = ReplaceTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -38,5 +40,6 @@ if __name__ == "__main__":
     manager.checkout_test(append_test)
     manager.checkout_test(push_pop_test)
     manager.checkout_test(insert_test)
+    manager.checkout_test(replace_test)
 
     manager.finish()

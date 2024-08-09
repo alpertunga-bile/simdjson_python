@@ -92,4 +92,67 @@ near the end 2                                     Passed
 near the end 3                                     Passed    
 near the end 4                                     Passed    
 ----------------------------------------------------------------------------------------------------
-Passed Ratio                                       %98.75
+------------------------------------------ Replace Tests -------------------------------------------
+beginning grow                                     Passed    
+beginning grow 1                                   Passed    
+beginning grow 2                                   Passed    
+beginning grow 3                                   Passed    
+beginning grow 4                                   Passed    
+beginning shrink                                   Passed    
+beginning shrink 1                                 Passed    
+beginning shrink 2                                 Passed    
+beginning shrink 3                                 Passed    
+beginning shrink 4                                 Passed    
+beginning same size                                Passed    
+beginning same size 1                              Passed    
+beginning same size 2                              Passed    
+beginning same size 3                              Passed    
+beginning same size 4                              Passed    
+middle grow                                        Passed    
+middle grow 1                                      Passed    
+middle grow 2                                      Passed    
+middle grow 3                                      Passed    
+middle grow 4                                      Passed    
+middle shrink                                      Passed    
+middle shrink 1                                    Passed    
+middle shrink 2                                    Passed    
+middle shrink 3                                    Passed    
+middle shrink 4                                    Passed    
+middle same size                                   Passed    
+middle same size 1                                 Passed    
+middle same size 2                                 Passed    
+middle same size 3                                 Passed    
+middle same size 4                                 Passed    
+near the end grow                                  Passed    
+near the end grow 1                                Passed    
+near the end grow 2                                Passed    
+near the end grow 3                                Passed    
+near the end grow 4                                Passed    
+near the end shrink                                Passed    
+near the end shrink 1                              Passed    
+near the end shrink 2                              Passed    
+near the end shrink 3                              Passed    
+near the end shrink 4                              Passed    
+near the end same size                             Passed    
+near the end same size 1                           Passed    
+near the end same size 2                           Passed    
+near the end same size 3                           Passed    
+near the end same size 4                           Passed    
+end grow                                           Passed    
+end grow 1                                         Passed    
+end grow 2                                         Passed    
+end grow 3                                         Passed    
+end grow 4                                         Passed    
+end shrink                                         Passed    
+end shrink 1                                       Passed    
+end shrink 2                                       Passed    
+end shrink 3                                       Passed    
+end shrink 4                                       Passed    
+end same size                                      Passed    
+end same size 1                                    Passed    
+end same size 2                                    Passed    
+end same size 3                                    Passed    
+end same size 4                                    Passed    
+buffer to heap                                     Passed    
+----------------------------------------------------------------------------------------------------
+Passed Ratio                                       %99.29
