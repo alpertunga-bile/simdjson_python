@@ -155,4 +155,6 @@ end same size 3                                    Passed
 end same size 4                                    Passed    
 buffer to heap                                     Passed    
 ----------------------------------------------------------------------------------------------------
+Total Tests                                        141
+Passed Tests                                       140
 Passed Ratio                                       %99.29

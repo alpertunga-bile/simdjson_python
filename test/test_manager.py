@@ -42,7 +42,11 @@ class TestManager:
     def finish(self) -> None:
         file = open(self.log_file, "a")
 
-        printable_string = "{0:50} %{1:3.2f}".format(
+        printable_string = "{0:50} {1}\n".format("Total Tests", self.total_tests)
+        printable_string += "{0:50} {1}\n".format(
+            "Passed Tests", self.correct_result_counter
+        )
+        printable_string += "{0:50} %{1:3.2f}".format(
             "Passed Ratio", self.correct_result_counter / self.total_tests * 100.0
         )
 
