@@ -21,6 +21,7 @@ from test_push_pop import PushPopTests
 from test_insert import InsertTests
 from test_replace import ReplaceTests
 from test_clear_erase import ClearEraseTests
+from test_swap import SwapTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -34,6 +35,7 @@ if __name__ == "__main__":
     insert_test = InsertTests()
     replace_test = ReplaceTests()
     clear_erase_test = ClearEraseTests()
+    swap_test = SwapTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -44,5 +46,6 @@ if __name__ == "__main__":
     manager.checkout_test(insert_test)
     manager.checkout_test(replace_test)
     manager.checkout_test(clear_erase_test)
+    manager.checkout_test(swap_test)
 
     manager.finish()
