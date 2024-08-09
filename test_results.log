@@ -155,6 +155,12 @@ end same size 3                                    Passed
 end same size 4                                    Passed    
 buffer to heap                                     Passed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        141
-Passed Tests                                       140
-Passed Ratio                                       %99.29
+---------------------------------------- Clear Erase Tests -----------------------------------------
+erase                                              Passed    
+clear                                              Passed    
+erase 2                                            Passed    
+change with index op                               Passed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        145
+Passed Tests                                       144
+Passed Ratio                                       %99.31

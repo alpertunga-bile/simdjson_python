@@ -20,6 +20,7 @@ from test_append import AppendTests
 from test_push_pop import PushPopTests
 from test_insert import InsertTests
 from test_replace import ReplaceTests
+from test_clear_erase import ClearEraseTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -32,6 +33,7 @@ if __name__ == "__main__":
     push_pop_test = PushPopTests()
     insert_test = InsertTests()
     replace_test = ReplaceTests()
+    clear_erase_test = ClearEraseTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -41,5 +43,6 @@ if __name__ == "__main__":
     manager.checkout_test(push_pop_test)
     manager.checkout_test(insert_test)
     manager.checkout_test(replace_test)
+    manager.checkout_test(clear_erase_test)
 
     manager.finish()
