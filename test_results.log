@@ -1,0 +1,60 @@
+---------------------------------------- Constructor Tests -----------------------------------------
+empty                                              Passed    
+char                                               Passed    
+string                                             Passed    
+substr                                             Passed    
+substr with begin and end                          Passed    
+sample string                                      Passed    
+exclude string with substr                         Failed    
+substr with string with begin and end              Passed    
+count with char                                    Passed    
+copy                                               Passed    
+insert and substr                                  Passed    
+----------------------------------------------------------------------------------------------------
+------------------------------------------- Assign Tests -------------------------------------------
+empty                                              Passed    
+char                                               Passed    
+SIMDString                                         Passed    
+substr with begin and size                         Passed    
+substr                                             Passed    
+substr with begin and size 2                       Passed    
+SIMDString with string                             Passed    
+self                                               Passed    
+char with count                                    Passed    
+string                                             Passed    
+with SIMDString class's value                      Passed    
+string assing op                                   Passed    
+empty string                                       Passed    
+----------------------------------------------------------------------------------------------------
+------------------------------------------- Access Tests -------------------------------------------
+at                                                 Passed    
+operator[]                                         Passed    
+front                                              Passed    
+back                                               Passed    
+value                                              Passed    
+data                                               Passed    
+operator[] assign                                  Passed    
+----------------------------------------------------------------------------------------------------
+------------------------------------------ Equality Tests ------------------------------------------
+self                                               Passed    
+self 2                                             Passed    
+self 3                                             Passed    
+SIMDString                                         Passed    
+SIMDString not                                     Passed    
+SIMDString not 2                                   Passed    
+SIMDString not 3                                   Passed    
+SIMDString not 4                                   Passed    
+SIMDString not 5                                   Passed    
+SIMDString not 6                                   Passed    
+string                                             Passed    
+string 2                                           Passed    
+string 3                                           Passed    
+string not                                         Passed    
+string not 2                                       Passed    
+string not 3                                       Passed    
+string not 4                                       Passed    
+string not 5                                       Passed    
+string not 6                                       Passed    
+empty                                              Passed    
+----------------------------------------------------------------------------------------------------
+Passed Ratio                                       %98.04
