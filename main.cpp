@@ -262,11 +262,6 @@ PYBIND11_MODULE(simdstring, m) {
                     &StrClass::substr, py::const_),
                 "pos"_a, "count"_a = StrClass::npos);
 
-  str_class.def(
-      "contains",
-      py::overload_cast<StrClass::value_type>(&StrClass::contains, py::const_),
-      "c"_a);
-
   str_class.def("contains",
                 py::overload_cast<StrClass::const_pointer>(&StrClass::contains,
                                                            py::const_),

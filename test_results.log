@@ -246,6 +246,11 @@ starts with self                                   Passed
 ends with self                                     Passed    
 ends with substr                                   Passed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        220
-Passed Tests                                       200
-Passed Ratio                                       %90.91
+------------------------------------------ Contains Tests ------------------------------------------
+contains                                           Passed    
+contains 2                                         Passed    
+contains 3                                         Passed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        223
+Passed Tests                                       203
+Passed Ratio                                       %91.03
