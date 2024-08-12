@@ -10,6 +10,12 @@
 2. Run the ```build_release.bat``` file
 3. Run the ```run_test.bat``` file
 
+## Benchmarks
+
+- Benchmark results can be found in the ```benchmark_results.log``` file.
+
+- Benchmarks can be found under the ```benchmark``` folder.
+
 ## Tests
 
 - Test results can be found in the ```test_results.log``` file.
