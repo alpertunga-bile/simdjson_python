@@ -27,6 +27,8 @@ from test_rfind import RFindTests
 from test_find_first_last_of import FindFirstLastOfTests
 from test_starts_ends_with import StartsEndsWithTests
 from test_contains import ContainsTests
+from test_copy_substr import CopySubstrTests
+from test_size_clear import SizeClearTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -46,6 +48,8 @@ if __name__ == "__main__":
     find_first_last_of_test = FindFirstLastOfTests()
     start_end_with_test = StartsEndsWithTests()
     contain_test = ContainsTests()
+    copy_substr_test = CopySubstrTests()
+    size_clear_test = SizeClearTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -62,5 +66,7 @@ if __name__ == "__main__":
     manager.checkout_test(find_first_last_of_test)
     manager.checkout_test(start_end_with_test)
     manager.checkout_test(contain_test)
+    manager.checkout_test(copy_substr_test)
+    manager.checkout_test(size_clear_test)
 
     manager.finish()

@@ -251,6 +251,20 @@ contains                                           Passed
 contains 2                                         Passed    
 contains 3                                         Passed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        223
-Passed Tests                                       203
-Passed Ratio                                       %91.03
+---------------------------------------- Copy Substr Tests -----------------------------------------
+copy                                               Failed    
+substr                                             Passed    
+substr 2                                           Passed    
+substr with null chars                             Failed    
+----------------------------------------------------------------------------------------------------
+----------------------------------------- Size Clear Tests -----------------------------------------
+resize bigger                                      Passed    
+resize bigger w char                               Failed    
+resize smaller                                     Passed    
+length                                             Passed    
+empty                                              Passed    
+clear/empty                                        Passed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        233
+Passed Tests                                       210
+Passed Ratio                                       %90.13
