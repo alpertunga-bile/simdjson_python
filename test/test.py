@@ -29,6 +29,7 @@ from test_starts_ends_with import StartsEndsWithTests
 from test_contains import ContainsTests
 from test_copy_substr import CopySubstrTests
 from test_size_clear import SizeClearTests
+from test_conversions import ConversionTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -50,6 +51,7 @@ if __name__ == "__main__":
     contain_test = ContainsTests()
     copy_substr_test = CopySubstrTests()
     size_clear_test = SizeClearTests()
+    conversion_test = ConversionTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -68,5 +70,6 @@ if __name__ == "__main__":
     manager.checkout_test(contain_test)
     manager.checkout_test(copy_substr_test)
     manager.checkout_test(size_clear_test)
+    manager.checkout_test(conversion_test)
 
     manager.finish()

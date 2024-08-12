@@ -265,6 +265,17 @@ length                                             Passed
 empty                                              Passed    
 clear/empty                                        Passed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        233
-Passed Tests                                       210
-Passed Ratio                                       %90.13
+----------------------------------------- Conversion Tests -----------------------------------------
+int                                                Passed    
+unsigned int                                       Passed    
+long                                               Passed    
+unsigned long                                      Passed    
+long long                                          Passed    
+unsigned long long                                 Passed    
+int max                                            Passed    
+int min                                            Passed    
+float                                              Failed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        242
+Passed Tests                                       218
+Passed Ratio                                       %90.08
