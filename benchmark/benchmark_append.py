@@ -27,46 +27,46 @@ def simd_append_func_char(count: int) -> None:
         string.append("a")
 
 
-def string_append_op_str(count: int) -> None:
+def string_append_op_str(count: int, long: int = STR_LENGTH) -> None:
     string = ""
 
     for _ in range(count):
-        string += "a" * STR_LENGTH
+        string += "a" * long
 
 
-def simd_append_op_str(count: int) -> None:
+def simd_append_op_str(count: int, long: int = STR_LENGTH) -> None:
     string = SIMDString()
 
     for _ in range(count):
-        string += "a" * STR_LENGTH
+        string += "a" * long
 
 
-def simd_append_func_str(count: int) -> None:
+def simd_append_func_str(count: int, long: int = STR_LENGTH) -> None:
     string = SIMDString()
 
     for _ in range(count):
-        string.append("a" * STR_LENGTH)
+        string.append("a" * long)
 
 
-def string_append_op_long_str(count: int) -> None:
+def string_append_op_long_str(count: int, long: int = LONG_STR_LENGTH) -> None:
     string = ""
 
     for _ in range(count):
-        string += "a" * LONG_STR_LENGTH
+        string += "a" * long
 
 
-def simd_append_op_long_str(count: int) -> None:
+def simd_append_op_long_str(count: int, long: int = LONG_STR_LENGTH) -> None:
     string = SIMDString()
 
     for _ in range(count):
-        string += "a" * LONG_STR_LENGTH
+        string += "a" * long
 
 
-def simd_append_func_long_str(count: int) -> None:
+def simd_append_func_long_str(count: int, long: int = LONG_STR_LENGTH) -> None:
     string = SIMDString()
 
     for _ in range(count):
-        string.append("a" * LONG_STR_LENGTH)
+        string.append("a" * long)
 
 
 class AppendBenchmarks(BenchmarkBase):

@@ -13,10 +13,13 @@ sys.path.append(BUILT_PACKAGE_PATH)
 
 from benchmark_manager import BenchmarkManager
 from benchmark_append import AppendBenchmarks
+from benchmark_assign import AssignBenchmarks
 
 if __name__ == "__main__":
     manager = BenchmarkManager()
 
     append_bk = AppendBenchmarks()
+    assign_bk = AssignBenchmarks()
 
     manager.checkout_benchmark(append_bk)
+    manager.checkout_benchmark(assign_bk)

@@ -8,7 +8,11 @@ class BenchmarkManager:
 
     def __init__(self, count: int = 1_000_000) -> None:
         file = open(self.log_file, "w")
+
+        print(f"Number of iterations : {self.COUNT}")
+        file.write(f"Number of iterations : {self.COUNT}\n")
         file.close()
+
         self.COUNT = count
 
     def __print_time(self, name: str, func, count: int, file) -> None:
