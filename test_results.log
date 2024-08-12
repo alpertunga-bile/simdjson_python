@@ -227,7 +227,25 @@ char                                               Passed
 substr                                             Passed    
 char 2                                             Passed    
 substr 2                                           Passed    
+char w pos                                         Failed    
+substr w pos                                       Failed    
+char w pos 2                                       Passed    
+substr w pos 2                                     Passed    
+edge case match == pos                             Failed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        204
-Passed Tests                                       187
-Passed Ratio                                       %91.67
+----------------------------------------- Starts Ends With -----------------------------------------
+starts with                                        Passed    
+starts with 2                                      Passed    
+ends with                                          Passed    
+ends with 2                                        Passed    
+starts with char                                   Passed    
+starts with char 2                                 Passed    
+ends with char                                     Passed    
+ends with char 2                                   Passed    
+starts with self                                   Passed    
+ends with self                                     Passed    
+ends with substr                                   Passed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        220
+Passed Tests                                       200
+Passed Ratio                                       %90.91

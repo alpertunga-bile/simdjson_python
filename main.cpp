@@ -248,17 +248,10 @@ PYBIND11_MODULE(simdstring, m) {
   str_class.def("swap", &StrClass::swap, "str"_a);
 
   str_class.def("starts_with",
-                py::overload_cast<StrClass::value_type>(&StrClass::starts_with,
-                                                        py::const_),
-                "c"_a);
-  str_class.def("starts_with",
                 py::overload_cast<const StrClass::pointer>(
                     &StrClass::starts_with, py::const_),
                 "s"_a);
-  str_class.def(
-      "ends_with",
-      py::overload_cast<StrClass::value_type>(&StrClass::ends_with, py::const_),
-      "c"_a);
+
   str_class.def("ends_with",
                 py::overload_cast<StrClass::const_pointer>(&StrClass::ends_with,
                                                            py::const_),
