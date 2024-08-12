@@ -373,6 +373,10 @@ PYBIND11_MODULE(simdstring, m) {
                     &StrClass::find_last_of, py::const_),
                 "str"_a, "pos"_a = StrClass::npos);
   str_class.def("find_last_of",
+                py::overload_cast<StrClass::const_pointer, StrClass::size_type>(
+                    &StrClass::find_last_of, py::const_),
+                "s"_a, "pos"_a = StrClass::npos);
+  str_class.def("find_last_of",
                 py::overload_cast<StrClass::value_type, StrClass::size_type>(
                     &StrClass::find_last_of, py::const_),
                 "c"_a, "pos"_a = StrClass::npos);

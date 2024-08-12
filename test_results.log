@@ -196,13 +196,38 @@ edge case null char                                Failed
 substr                                             Passed    
 substr 2                                           Passed    
 substr 3                                           Passed    
-substr w pos                                       Failed    
+substr w pos                                       Passed    
 substr w pos 2                                     Failed    
-substr w pos 3                                     Failed    
+substr w pos 3                                     Passed    
 substr w pos 4                                     Failed    
 substr w pos 5                                     Failed    
 substr w pos 6                                     Failed    
+char                                               Passed    
+char 2                                             Passed    
+char 3                                             Passed    
+char with pos                                      Failed    
+char with pos 2                                    Failed    
+char with pos 3                                    Failed    
+char with pos 4                                    Failed    
+char with pos 5                                    Failed    
+char with pos 6                                    Failed    
+whole string                                       Passed    
+whole string no match                              Passed    
+whole string no match 2                            Passed    
+edge case out of scope                             Failed    
+edge case out of scope 2                           Failed    
+edge case out of scope 3                           Failed    
+edge case out of scope 4                           Failed    
+empty string                                       Passed    
+empty string 2                                     Passed    
+edge case null char                                Failed    
 ----------------------------------------------------------------------------------------------------
-Total Tests                                        181
-Passed Tests                                       173
-Passed Ratio                                       %95.58
+------------------------------------- Find First Last Of Tests -------------------------------------
+char                                               Passed    
+substr                                             Passed    
+char 2                                             Passed    
+substr 2                                           Passed    
+----------------------------------------------------------------------------------------------------
+Total Tests                                        204
+Passed Tests                                       187
+Passed Ratio                                       %91.67

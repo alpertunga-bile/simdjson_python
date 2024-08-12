@@ -24,6 +24,7 @@ from test_clear_erase import ClearEraseTests
 from test_swap import SwapTests
 from test_find import FindTests
 from test_rfind import RFindTests
+from test_find_first_last_of import FindFirstLastOfTests
 
 if __name__ == "__main__":
     manager = TestManager()
@@ -40,6 +41,7 @@ if __name__ == "__main__":
     swap_test = SwapTests()
     find_test = FindTests()
     rfind_test = RFindTests()
+    find_first_last_of_test = FindFirstLastOfTests()
 
     manager.checkout_test(ctor_test)
     manager.checkout_test(assign_test)
@@ -53,5 +55,6 @@ if __name__ == "__main__":
     manager.checkout_test(swap_test)
     manager.checkout_test(find_test)
     manager.checkout_test(rfind_test)
+    manager.checkout_test(find_first_last_of_test)
 
     manager.finish()
