@@ -19,7 +19,7 @@ setup(
     url="https://github.com/alpertunga-bile/simdstring_python",
     description="Python wrap for the SIMDString repository",
     ext_modules=ext_modules,
-    headers=["third-party/SIMDString/SIMDString.h"]
+    headers=["third-party/SIMDString/SIMDString.h"],
     cmdclass={"build_ext": build_ext},
     python_requires=">=3.7",
 )
