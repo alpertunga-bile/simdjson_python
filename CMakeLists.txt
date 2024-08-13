@@ -23,12 +23,11 @@ set(PYBIND11_FINDPYTHON ON)
 add_subdirectory(${PXD_THIRD_PARTY_DIR}/pybind11)
 
 set(PXD_HEADER_FILES
-    ${PXD_THIRD_PARTY_DIR}/SIMDString/SIMDString.h
 )
 
 set(PXD_SOURCE_FILES
     ${PXD_THIRD_PARTY_DIR}/SIMDString/SIMDString.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
 
 include_directories(
