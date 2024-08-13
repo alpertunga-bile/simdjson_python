@@ -5,13 +5,10 @@ from os.path import join
 ext_modules = [
     Pybind11Extension(
         "simdstring",
-        sorted(
-            [
-                "main.cpp",
-                join("third-party", "SIMDString", "SIMDString.h"),
-                join("third-party", "SIMDString", "SIMDString.cpp"),
-            ]
-        ),
+        [
+            join("third-party", "SIMDString", "SIMDString.cpp"),
+            "main.cpp",
+        ],
     )
 ]
 
@@ -20,6 +17,7 @@ setup(
     version="0.0.1",
     url="https://github.com/alpertunga-bile/simdstring_python",
     description="Python wrap for the SIMDString repository",
+    include_dirs=[join("third-party", "SIMDString")],
     ext_modules=ext_modules,
     cmdclass={"build_ext": build_ext},
     python_requires=">=3.7",
