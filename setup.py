@@ -5,7 +5,13 @@ from os.path import join
 ext_modules = [
     Pybind11Extension(
         "simdstring",
-        sorted(["main.cpp", join("third-party", "SIMDString", "SIMDString.cpp")]),
+        sorted(
+            [
+                "main.cpp",
+                join("third-party", "SIMDString", "SIMDString.h"),
+                join("third-party", "SIMDString", "SIMDString.cpp"),
+            ]
+        ),
     )
 ]
 
