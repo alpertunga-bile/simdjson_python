@@ -2,10 +2,10 @@
 
 #include "SIMDString.h"
 
-#include "pybind11.h"
+#include "pybind11/pybind11.h"
 
-#include "operators.h"
-#include "stl.h"
+#include "pybind11/operators.h"
+#include "pybind11/stl.h"
 
 constexpr int SIMDSTRING_ALIGNMENT = 64;
 

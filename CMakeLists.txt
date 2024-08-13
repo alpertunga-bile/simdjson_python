@@ -32,7 +32,7 @@ set(PXD_SOURCE_FILES
 
 include_directories(
     ${PXD_THIRD_PARTY_DIR}/SIMDString
-    ${PXD_THIRD_PARTY_DIR}/pybind11/include/pybind11
+    ${PXD_THIRD_PARTY_DIR}/pybind11/include
 )
 
 set(COMMON_STD_HEADERS
