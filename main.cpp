@@ -1,6 +1,6 @@
 #include <cstddef>
 
-#include "third-party/SIMDString/SIMDString.h"
+#include "SIMDString.h"
 
 #include "third-party/pybind11/include/pybind11/pybind11.h"
 
