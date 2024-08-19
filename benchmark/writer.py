@@ -41,7 +41,7 @@ class MarkdownWriter(IWriter):
     def start_table(
         self, headers: list[str], orientations: list[MarkdownHeaderOrientation]
     ) -> None:
-        with open(self._filename, "w") as file:
+        with open(self._filename, "a") as file:
             file.write("| ")
 
             for header in headers:

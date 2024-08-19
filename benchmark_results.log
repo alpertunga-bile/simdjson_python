@@ -1,49 +1,49 @@
 Number of iterations : 1000000
 ----------------------------------- Append Operation - Char (+=) -----------------------------------
-Default String       | Elapsed Time : 0.08670919993892312
-SIMDString           | Elapsed Time : 1.910506899934262
+Default String       | Elapsed Time : 0.0880590999731794
+SIMDString           | Elapsed Time : 1.8488767000380903
 ----------------------------------------------------------------------------------------------------
 -------------------------------Append Operation - Str Length 10 (+=)--------------------------------
-Default String       | Elapsed Time : 3.870642099995166
-SIMDString           | Elapsed Time : 1.8830120000056922
+Default String       | Elapsed Time : 3.824022199958563
+SIMDString           | Elapsed Time : 1.865448499971535
 ----------------------------------------------------------------------------------------------------
 -------------------------------Append Operation - Str Length 25 (+=)--------------------------------
-Default String       | Elapsed Time : 22.77823860011995
-SIMDString           | Elapsed Time : 1.9490228001959622
+Default String       | Elapsed Time : 23.915154799993616
+SIMDString           | Elapsed Time : 1.9782158000161871
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------Append Function - Char---------------------------------------
-Default String       | Elapsed Time : 0.08967249980196357
-SIMDString           | Elapsed Time : 2.2730916999280453
+Default String       | Elapsed Time : 0.09380319999763742
+SIMDString           | Elapsed Time : 2.2972456000279635
 ----------------------------------------------------------------------------------------------------
 ----------------------------------Append Function - Str Length 10-----------------------------------
-Default String       | Elapsed Time : 3.6436116001568735
-SIMDString           | Elapsed Time : 2.3299336000345647
+Default String       | Elapsed Time : 3.9801263000117615
+SIMDString           | Elapsed Time : 2.352189900004305
 ----------------------------------------------------------------------------------------------------
 ----------------------------------Append Function - Str Length 25-----------------------------------
-Default String       | Elapsed Time : 22.77045669965446
-SIMDString           | Elapsed Time : 2.4148530000820756
+Default String       | Elapsed Time : 23.15814870002214
+SIMDString           | Elapsed Time : 2.4656924000009894
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------Assign Function - Char---------------------------------------
-Default String       | Elapsed Time : 0.01634680014103651
-SIMDString           | Elapsed Time : 2.6011617998592556
+Default String       | Elapsed Time : 0.01715379999950528
+SIMDString           | Elapsed Time : 2.501999399974011
 ----------------------------------------------------------------------------------------------------
 --------------------------------------Assign Operation - Char---------------------------------------
-Default String       | Elapsed Time : 0.016712999902665615
-SIMDString           | Elapsed Time : 0.016555400099605322
+Default String       | Elapsed Time : 0.017328299989458174
+SIMDString           | Elapsed Time : 0.017469200014602393
 ----------------------------------------------------------------------------------------------------
 ---------------------------------Assign Function - String Length 10---------------------------------
-Default String       | Elapsed Time : 0.054488500114530325
-SIMDString           | Elapsed Time : 2.5317616998218
+Default String       | Elapsed Time : 0.05800819996511564
+SIMDString           | Elapsed Time : 2.5365715999505483
 ----------------------------------------------------------------------------------------------------
 --------------------------------Assign Operation - String Length 10---------------------------------
-Default String       | Elapsed Time : 0.054167499765753746
-SIMDString           | Elapsed Time : 0.05874849995598197
+Default String       | Elapsed Time : 0.061088799964636564
+SIMDString           | Elapsed Time : 0.06350879999808967
 ----------------------------------------------------------------------------------------------------
 ---------------------------------Assign Function - String Length 25---------------------------------
-Default String       | Elapsed Time : 0.05557249998673797
-SIMDString           | Elapsed Time : 2.510375500191003
+Default String       | Elapsed Time : 0.056277900002896786
+SIMDString           | Elapsed Time : 2.5410525999614038
 ----------------------------------------------------------------------------------------------------
 --------------------------------Assign Operation - String Length 25---------------------------------
-Default String       | Elapsed Time : 0.05433290032669902
-SIMDString           | Elapsed Time : 0.05683480016887188
+Default String       | Elapsed Time : 0.05338109994772822
+SIMDString           | Elapsed Time : 0.05472469999222085
 ----------------------------------------------------------------------------------------------------
