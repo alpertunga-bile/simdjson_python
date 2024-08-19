@@ -17,15 +17,6 @@ class BenchmarkManager:
         self._log_writer.write_line(f"Number of iterations : {self.COUNT}")
         self._md_writer.write_line(f"Number of iterations : {self.COUNT}")
 
-        self._md_writer.start_table(
-            ["Functions", "Default String", "SIMDString"],
-            [
-                MarkdownHeaderOrientation.LEFT,
-                MarkdownHeaderOrientation.RIGHT,
-                MarkdownHeaderOrientation.RIGHT,
-            ],
-        )
-
         self.COUNT = count
 
     def __print_time(self, name: str, func, count: int) -> float:
@@ -41,6 +32,15 @@ class BenchmarkManager:
         return end - start
 
     def checkout_benchmark(self, benchmark: BenchmarkBase) -> None:
+        self._md_writer.start_table(
+            ["Functions", "Default String", "SIMDString"],
+            [
+                MarkdownHeaderOrientation.LEFT,
+                MarkdownHeaderOrientation.RIGHT,
+                MarkdownHeaderOrientation.RIGHT,
+            ],
+        )
+
         for func_name, func_list in benchmark.funcs.items():
             printable_string = func_name.center(100, "-")
 
@@ -64,3 +64,5 @@ class BenchmarkManager:
 
             print("-" * 100)
             self._log_writer.write_line("-" * 100)
+
+        self._md_writer.write_line(line="\n", start_prefix="")

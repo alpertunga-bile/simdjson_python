@@ -59,9 +59,9 @@ class MarkdownWriter(IWriter):
 
             file.write("\n")
 
-    def write_line(self, line: str) -> None:
+    def write_line(self, line: str, start_prefix: str = "-") -> None:
         with open(self._filename, "a") as file:
-            file.write(f"- {line}\n\n")
+            file.write(f"{start_prefix} {line}\n\n")
 
     def write_table_row(self, lines: list[str]) -> None:
         with open(self._filename, "a") as file:

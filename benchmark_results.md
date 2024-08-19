@@ -4,15 +4,31 @@
 
 | Functions                             |     Default String |        SIMDString |
 | :------------------------------------ | -----------------: | ----------------: |
-| Append Operation - Char (+=)          |  0.088059099973179 | 1.848876700038090 |
-| Append Operation - Str Length 10 (+=) |  3.824022199958563 | 1.865448499971535 |
-| Append Operation - Str Length 25 (+=) | 23.915154799993616 | 1.978215800016187 |
-| Append Function - Char                |  0.093803199997637 | 2.297245600027964 |
-| Append Function - Str Length 10       |  3.980126300011761 | 2.352189900004305 |
-| Append Function - Str Length 25       | 23.158148700022139 | 2.465692400000989 |
-| Assign Function - Char                |  0.017153799999505 | 2.501999399974011 |
-| Assign Operation - Char               |  0.017328299989458 | 0.017469200014602 |
-| Assign Function - String Length 10    |  0.058008199965116 | 2.536571599950548 |
-| Assign Operation - String Length 10   |  0.061088799964637 | 0.063508799998090 |
-| Assign Function - String Length 25    |  0.056277900002897 | 2.541052599961404 |
-| Assign Operation - String Length 25   |  0.053381099947728 | 0.054724699992221 |
+| Append Operation - Char (+=)          |  0.086109599971678 | 1.844931100029498 |
+| Append Operation - Str Length 10 (+=) |  3.887853199965321 | 1.908019600028638 |
+| Append Operation - Str Length 25 (+=) | 23.338599999959115 | 1.964293700002600 |
+| Append Function - Char                |  0.091276100021787 | 2.337395099981222 |
+| Append Function - Str Length 10       |  3.953721199999563 | 2.439930799999274 |
+| Append Function - Str Length 25       | 24.786470199993346 | 2.437047699990217 |
+ 
+
+
+| Functions                           |    Default String |        SIMDString |
+| :---------------------------------- | ----------------: | ----------------: |
+| Assign Function - Char              | 0.016810300003272 | 2.565124999964610 |
+| Assign Operation - Char             | 0.017197099979967 | 0.017251099983696 |
+| Assign Function - String Length 10  | 0.067326299962588 | 2.579731800011359 |
+| Assign Operation - String Length 10 | 0.056008699990343 | 0.055630100017879 |
+| Assign Function - String Length 25  | 0.055120100034401 | 2.558700499997940 |
+| Assign Operation - String Length 25 | 0.053441700001713 | 0.055950000009034 |
+ 
+
+
+| Functions                      |     Default String |         SIMDString |
+| :----------------------------- | -----------------: | -----------------: |
+| Insert At The Beginning - Char | 15.349451299989596 | 14.877794500032905 |
+| Insert At The End - Char       |  0.086191500013229 |  2.798107200011145 |
+| Insert In The Middle - Char    | 48.530026799999177 |  8.850002799998038 |
+ 
+
+
